@@ -546,16 +546,12 @@ const start = +new Date().getSeconds();
 const cardsView = {
     render: async ()=>{
         try {
-            /// parsel
-            const parseUrl = (0, _util.parseRequestUrl)();
-            console.log(parseUrl);
-            //////////////////////////
             const datas = await (0, _getJSON.getJSON)();
             const filteredData = await (0, _categoryView.categoryView)();
             const data = typeof filteredData === "undefined" ? datas : filteredData;
-            console.log(data);
             card.innerHTML = "";
             return data.map((item)=>{
+                console.log(item);
                 return `
        <div class="col">
        <div class="card cards p-3 mb-5 bg-body" style="width: 18rem">
@@ -678,20 +674,42 @@ parcelHelpers.export(exports, "categoryView", ()=>categoryView);
 var _errorRender = require("./errorRender");
 var _getJSON = require("./getJSON");
 const ul = document.querySelector(".dropdown-menu");
+const search = document.querySelector(".seach-anchor");
+const cardContainer = document.querySelector(".main__section--cards-grid");
+const input = document.querySelector(".navInput");
 const categoryView = async ()=>{
     try {
         const data = await (0, _getJSON.getJSON)();
-        ul.addEventListener("click", function(e) {
-            const btn = e.target.closest(".dropdown-item");
-            if (!btn) return;
-            console.log(btn);
-            const filteredItems = btn.textContent === "All" ? data : data.filter((entry)=>entry.category === btn.textContent);
-            return filteredItems;
+        // filtering with options dropdown list
+        selectByDropdown(data);
+        // Searching in input field
+        search.addEventListener("click", (e)=>{
+            const singleCard = document.querySelector(".card");
+            const inputValue = input.value.toLowerCase();
+            e.preventDefault();
+            data.filter((dts)=>{
+                if (dts.category.toLowerCase().indexOf(inputValue) > -1) {
+                    console.log(`${dts.category}: matched`);
+                    singleCard.style.display = "block";
+                } else {
+                    singleCard.style.display = "none";
+                    console.log(`${dts.category}: not matched`);
+                }
+            });
         });
     } catch (err) {
         (0, _errorRender.errorRender)(err);
     }
 };
+const selectByDropdown = function(data) {
+    ul.addEventListener("click", function(e) {
+        const btn = e.target.closest(".dropdown-item");
+        const filteredItems = btn.textContent === "All" ? data : data.filter((entry)=>entry.category === btn.textContent);
+        console.log(filteredItems);
+        return filteredItems;
+    });
+};
+const selectBySeachInput = function(data) {};
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./getJSON":"6yuWk","./errorRender":"kPT5x"}],"cgcsT":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -771,7 +789,6 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "inputView", ()=>inputView);
 const searchIcon = document.querySelector(".seach-anchor");
-console.log(searchIcon);
 const input = document.querySelector(".navInput");
 const inputView = ()=>{
     searchIcon.addEventListener("click", (e)=>{

@@ -70,7 +70,6 @@ body {
 .navInput {
     background-color: #5555;
     border: none;
-    outline: none;
     transition: transform 0.3s ease-in;
     width: 0;
 }
@@ -78,6 +77,7 @@ body {
 .navInput:focus {
     background-color: #5555;
     color: #e6e6e6;
+    outline: none;
 }
 
 .card__view--specification {

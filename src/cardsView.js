@@ -13,16 +13,12 @@ const start = +new Date().getSeconds()
 export const cardsView = {
     render: async() => {
         try {
-            /// parsel
-            const parseUrl = parseRequestUrl()
-            console.log(parseUrl);
-            //////////////////////////
             const datas = await getJSON()
             const filteredData = await categoryView()
             const data = typeof(filteredData) === 'undefined' ? datas : filteredData;
-            console.log(data);
             card.innerHTML = ''
             return data.map(item => {
+                console.log(item);
                 return `
        <div class="col">
        <div class="card cards p-3 mb-5 bg-body" style="width: 18rem">

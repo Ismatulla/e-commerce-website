@@ -12069,13 +12069,13 @@ body {
   width: 0;
   background-color: #5555;
   border: none;
-  outline: none;
   transition: transform .3s ease-in;
 }
 
 .navInput:focus {
   color: #e6e6e6;
   background-color: #5555;
+  outline: none;
 }
 
 .card__view--specification {

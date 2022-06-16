@@ -3,6 +3,7 @@ import cardView from "./cardView";
 import { errorRender } from "./errorRender";
 import { parseRequestUrl } from "./util";
 import { inputView } from "./inputView";
+
 inputView()
 const card = document.querySelector('.main__section--cards-grid')
 const routes = {
