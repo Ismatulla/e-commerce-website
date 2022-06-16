@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #444;
+  background: #ece9e6;
+  background: -webkit-linear-gradient( to right, #fff, #ece9e6);
+  background: linear-gradient(to right, #fff, #ece9e6);
+  font-family: Commissioner;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+a {
+  color: #335dfd;
+  text-decoration: none;
+}
+
+.row {
+  flex-flow: wrap;
+  margin: 0 -1rem;
+  display: flex;
+}
+
+.row + .row {
+  margin-top: 2rem;
+}
+
+[class*="col-"] {
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+footer {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.red {
+  color: red;
+}
+
+.col-1 {
+  width: 8.33333%;
+  flex: none;
+}
+
+.col-2 {
+  width: 16.6667%;
+  flex: none;
+}
+
+.col-3 {
+  width: 25%;
+  flex: none;
+}
+
+.col-4 {
+  width: 33.3333%;
+  flex: none;
+}
+
+.col-5 {
+  width: 41.6667%;
+  flex: none;
+}
+
+.col-6 {
+  width: 50%;
+  flex: none;
+}
+
+.col-7 {
+  width: 58.3333%;
+  flex: none;
+}
+
+.col-8 {
+  width: 66.6667%;
+  flex: none;
+}
+
+.col-9 {
+  width: 75%;
+  flex: none;
+}
+
+.col-10 {
+  width: 83.3333%;
+  flex: none;
+}
+
+.col-11 {
+  width: 91.6667%;
+  flex: none;
+}
+
+.col-12 {
+  width: 100%;
+  flex: none;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+
+  .col-md-1 {
+    width: 8.33333%;
+    flex: none;
+  }
+
+  .col-md-2 {
+    width: 16.6667%;
+    flex: none;
+  }
+
+  .col-md-3 {
+    width: 25%;
+    flex: none;
+  }
+
+  .col-md-4 {
+    width: 33.3333%;
+    flex: none;
+  }
+
+  .col-md-5 {
+    width: 41.6667%;
+    flex: none;
+  }
+
+  .col-md-6 {
+    width: 50%;
+    flex: none;
+  }
+
+  .col-md-7 {
+    width: 58.3333%;
+    flex: none;
+  }
+
+  .col-md-8 {
+    width: 66.6667%;
+    flex: none;
+  }
+
+  .col-md-9 {
+    width: 75%;
+    flex: none;
+  }
+
+  .col-md-10 {
+    width: 83.3333%;
+    flex: none;
+  }
+
+  .col-md-11 {
+    width: 91.6667%;
+    flex: none;
+  }
+
+  .col-md-12 {
+    width: 100%;
+    flex: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+/*# sourceMappingURL=index.c9572939.css.map */

@@ -1,0 +1,87 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+body {
+    height: 100vh;
+    position: relative;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    &__section--slider {
+        background-color: #e6e6e6;
+    }
+}
+
+.main__section--cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.carousel-item {
+    height: 400px;
+    object-fit: cover;
+}
+
+.card-img-top {
+    max-height: 150px;
+    object-fit: contain;
+    width: 100%;
+    justify-self: stretch;
+}
+
+.cards {
+    transition: all 0.3s;
+    box-shadow: 0 2.4rem 4.8rem rgb(0 0 0 / 8%);
+}
+
+.cards:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+// spinner
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+// icons
+.star-icon {
+    color: #ffd700;
+}
+
+// single card in cardView
+.single__card {
+    position: absolute !important;
+    top: 5rem !important;
+    width: 37.5rem !important;
+    &--img {
+        width: 15.625rem;
+    }
+}
+
+// navbar input
+.navInput {
+    background-color: #5555;
+    border: none;
+    outline: none;
+    transition: transform 0.3s ease-in;
+    width: 0;
+}
+
+.navInput:focus {
+    background-color: #5555;
+    color: #e6e6e6;
+}
+
+.card__view--specification {
+    position: absolute;
+    right: 5rem;
+    top: 10rem;
+}
